@@ -6,41 +6,39 @@ const recipeOutput = document.querySelector("#RecipeOutput");
 async function getRecipe(event) {
     event.preventDefault();
 
-      const ingredient = ingredients.value.split(",");
+    const ingredient = ingredients.value.split(",");
 
-
-try {
     const loadingMessages = [
         "Checking ingredients... 🍅",
+        "Speaking with head chef... 👨‍🍳",
         "Mixing recipe... 🥄",
         "Almost done... 🔥"
     ];
-    let msgIndex = 0;
 
-    recipeOutput.textContent = loadingMessages[msgIndex];
+    try {
 
-    
-    const intervalId = setInterval(() => {
-        msgIndex = (msgIndex + 1) % loadingMessages.length;
-        recipeOutput.textContent = loadingMessages[msgIndex];
-    }, 1000);
+        for (const message of loadingMessages) {
+            recipeOutput.textContent = message
+            await new Promise(resolve => setTimeout(resolve, 1000))
+        }
 
-    const response = await fetch(URL + "chat", {
-        method: 'POST',
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(ingredient)
-    })
-    if (!response.ok) {
-        throw new Error(response.statusText);
-    }
+        const response = await fetch(URL + "chat", {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(ingredient)
+        })
 
-    const data = await response.json();
-    recipeOutput.textContent = data.Choices[0].message.content;
-    console.log(data)
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+
+        const data = await response.json();
+        recipeOutput.textContent = data.Choices[0].message.content;
+        console.log(data)
 
 
-}catch(err) {
-console.log(err);}
+    }catch(err) {
+        console.log(err);}
 }
 
 
