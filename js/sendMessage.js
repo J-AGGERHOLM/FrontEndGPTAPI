@@ -10,6 +10,20 @@ async function getRecipe(event) {
 
 
 try {
+    const loadingMessages = [
+        "Checking ingredients... 🍅",
+        "Mixing recipe... 🥄",
+        "Almost done... 🔥"
+    ];
+    let msgIndex = 0;
+
+    recipeOutput.textContent = loadingMessages[msgIndex];
+
+    
+    const intervalId = setInterval(() => {
+        msgIndex = (msgIndex + 1) % loadingMessages.length;
+        recipeOutput.textContent = loadingMessages[msgIndex];
+    }, 1000);
 
     const response = await fetch(URL + "chat", {
         method: 'POST',
