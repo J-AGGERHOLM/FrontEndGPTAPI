@@ -33,7 +33,7 @@ async function getRecipe(event) {
         }
 
         const data = await response.json();
-        recipeOutput.textContent = data.Choices[0].message.content;
+        recipeOutput.value = data.Choices[0].message.content;
         console.log(data)
 
 
@@ -43,3 +43,5 @@ async function getRecipe(event) {
 
 
 form.addEventListener("submit", getRecipe);
+
+
