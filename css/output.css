@@ -10,6 +10,8 @@
     --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-green-300: oklch(87.1% 0.15 154.449);
     --color-green-400: oklch(79.2% 0.209 151.711);
+    --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-emerald-800: oklch(43.2% 0.095 166.913);
     --color-indigo-300: oklch(78.5% 0.115 274.713);
     --color-indigo-400: oklch(67.3% 0.182 276.935);
     --color-indigo-600: oklch(51.1% 0.262 276.966);
@@ -246,6 +248,9 @@
   .min-h-\[30vh\] {
     min-height: 30vh;
   }
+  .min-h-\[33vh\] {
+    min-height: 33vh;
+  }
   .min-h-\[35vh\] {
     min-height: 35vh;
   }
@@ -293,6 +298,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -353,6 +361,24 @@
   .bg-amber-50 {
     background-color: var(--color-amber-50);
   }
+  .bg-emerald-500\/80 {
+    background-color: color-mix(in srgb, oklch(69.6% 0.17 162.48) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-emerald-500) 80%, transparent);
+    }
+  }
+  .bg-emerald-800\/40 {
+    background-color: color-mix(in srgb, oklch(43.2% 0.095 166.913) 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-emerald-800) 40%, transparent);
+    }
+  }
+  .bg-emerald-800\/80 {
+    background-color: color-mix(in srgb, oklch(43.2% 0.095 166.913) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-emerald-800) 80%, transparent);
+    }
+  }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
@@ -361,6 +387,12 @@
   }
   .bg-gray-900 {
     background-color: var(--color-gray-900);
+  }
+  .bg-green-300\/50 {
+    background-color: color-mix(in srgb, oklch(87.1% 0.15 154.449) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-green-300) 50%, transparent);
+    }
   }
   .bg-green-300\/80 {
     background-color: color-mix(in srgb, oklch(87.1% 0.15 154.449) 80%, transparent);
@@ -518,6 +550,12 @@
   }
   .italic {
     font-style: italic;
+  }
+  .opacity-65 {
+    opacity: 65%;
+  }
+  .opacity-75 {
+    opacity: 75%;
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));

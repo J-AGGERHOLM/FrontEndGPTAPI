@@ -7,9 +7,9 @@
 </head>
 <body>
 <!-- aside:-->
-<div class="min-h-screen p-4 md:p-6 grid gap-4 md:grid-cols-[33vw_1fr] md:grid-rows-[1fr_1fr] bg-gray-50">
+<div class="min-h-screen p-4 md:p-6 grid gap-2 md:grid-cols-[33vw_1fr] md:grid-rows-[1fr_1fr] bg-gray-50">
     <!-- Aside: Welcome / How it works -->
-    <aside class="bg-pink-300/80 rounded-2xl p-5 md:p-6 shadow-sm">
+    <aside class="bg-emerald-800/40 rounded-2xl p-5 md:p-6 shadow-sm">
         <h1 class="text-2xl font-bold tracking-tight">PantryChef</h1>
         <h2 class="mt-2 text-lg font-semibold">Welcome!</h2>
 
@@ -40,12 +40,14 @@
 
     <!-- Aside: Form -->
     <aside class="bg-[url('https://t3.ftcdn.net/jpg/03/00/63/08/360_F_300630857_cKZtOlX2t3EbbhyjlchNqUNoDZVCULKx.jpg')] bg-cover bg-center
-    rounded-2xl p-5 md:p-6 shadow-sm">
+
+    rounded-2xl p-5 md:p-6 shadow-sm opacity-75">
+        <div>
         <form id="messageForm" class="space-y-3">
             <label for="ingredients" class="block font-bold text-gray-900 bg-white/80 rounded-2xl">Type ingredients</label>
             <textarea id="ingredients" rows="5"
                       class="
-                      resize-none min-h-[36vh]
+                      resize-none min-h-[33vh]
                       w-full rounded-xl border border-black/10 bg-white/90 p-3 text-sm outline-none focus:ring-2 focus:ring-green-400"
                       placeholder="eg. chicken thighs, rice, garlic, onion, paprika"
             ></textarea>
@@ -55,6 +57,7 @@
                 Get Recipe
             </button>
         </form>
+
     </aside>
 </div>
 
