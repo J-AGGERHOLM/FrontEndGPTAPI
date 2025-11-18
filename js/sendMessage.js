@@ -16,7 +16,6 @@ async function getRecipe(event) {
     ];
 
     try {
-        // Make text centered while loading
         recipeOutput.style.display = "flex";
         recipeOutput.style.alignItems = "center";
         recipeOutput.style.justifyContent = "center";
@@ -41,7 +40,6 @@ async function getRecipe(event) {
 
         const data = await response.json();
 
-        // Reset styling and show recipe normally
         recipeOutput.style.display = "";
         recipeOutput.style.alignItems = "";
         recipeOutput.style.justifyContent = "";
